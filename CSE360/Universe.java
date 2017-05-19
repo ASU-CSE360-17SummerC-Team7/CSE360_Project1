@@ -1,35 +1,33 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package CSE360;
-import java.awt.*;
-import javax.swing.*;
-
 /**
- *
- * @author pdreiter
+ * Main class
+ * 
+ * @author Javier Gonzalez-Sabchez
+ * @author Manohara Rao Penumala
  */
+ 
+package CSE360;
+
+import java.awt.GridLayout;
+import javax.swing.JFrame;
+
 public class Universe extends JFrame {
-    
-    /**
-     * @param args the command line arguments
-     */
-    public Universe(){
-        super("Team 7 Project 1 testing");
-        JPanel team7 = new Team7();
-        initializeGUI(team7);
+
+    public Universe () {
+     GridLayout grid = new GridLayout (3,2);   
+     setLayout(grid);
+     this.add(new Team0());
+     this.add(new Team2());
+     this.add(new Team0());
+     this.add(new Team0());
+     this.add(new Team0());
+     this.add(new Team0());
     }
+
     public static void main(String[] args) {
-        // TODO code application logic here
-        JFrame x = new Universe();
-        
+        Universe u = new Universe();
+        u.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        u.setSize(500, 500);
+        u.setVisible(true);
     }
-    private void initializeGUI(JPanel jp) {
-         
-        this.setSize(400,400);
-        this.add(jp);
-        this.setVisible(true);
-    }
+    
 }
